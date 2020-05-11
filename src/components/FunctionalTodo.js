@@ -10,7 +10,7 @@ const FunctionalTodoApp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (items.length === 0) {
+    if (text.length === 0) {
       return;
     }
     const newItem = {
