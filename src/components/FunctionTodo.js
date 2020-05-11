@@ -1,13 +1,13 @@
 import React from 'react';
-import FunctionalTodoList from './FunctionalTodoList';
+import FunctionalTodoList from './FunctionTodoList';
 
-const FunctionalTodoApp = () => {
+const FunctionTodoApp = () => {
 
-  const [items, setItems] = React.useState(JSON.parse(localStorage.getItem('functionalTodoItems')) || []);
+  const [items, setItems] = React.useState(JSON.parse(localStorage.getItem('functionTodoItems')) || []);
   const [text, setText] = React.useState('');
 
   React.useEffect(() => {
-    localStorage.setItem('functionalTodoItems', JSON.stringify(items));
+    localStorage.setItem('functionTodoItems', JSON.stringify(items));
   }, [items]);
 
   const handleChange = (e) => setText(e.target.value);
@@ -27,8 +27,8 @@ const FunctionalTodoApp = () => {
 
   return (
     <div>
-      <h3>Functional TODO</h3>
-      <FunctionalTodoList items={items} />
+      <h3>Function TODO</h3>
+      <FunctionTodoList items={items} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="new-todo">
           What needs to be done?
@@ -47,4 +47,4 @@ const FunctionalTodoApp = () => {
 
 }
 
-export default FunctionalTodoApp;
+export default FunctionTodoApp;

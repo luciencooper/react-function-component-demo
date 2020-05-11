@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import ClassTodo from './components/ClassTodo';
-import FunctionalTodo from './components/FunctionalTodo';
+import FunctionTodo from './components/FunctionTodo';
 
 ReactDOM.render(
   <React.StrictMode>
     <ClassTodo />
-    <FunctionalTodo />
+    <FunctionTodo />
   </React.StrictMode>,
   document.getElementById('root')
 );

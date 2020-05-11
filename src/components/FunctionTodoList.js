@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FunctionalTodoList = (props) => (
+const FunctionTodoList = (props) => (
   <ul>
     {props.items.map(item => (
       <li key={item.id}>{item.text}</li>
@@ -8,4 +8,4 @@ const FunctionalTodoList = (props) => (
   </ul>
 );
 
-export default FunctionalTodoList;
+export default FunctionTodoList;
