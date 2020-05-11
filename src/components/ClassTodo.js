@@ -1,4 +1,5 @@
 import React from 'react';
+import ClassTodoList from './ClassTodoList';
 
 class ClassTodoApp extends React.Component {
 
@@ -13,7 +14,7 @@ class ClassTodoApp extends React.Component {
     return (
       <div>
         <h3>TODO</h3>
-        <TodoList items={this.state.items} />
+        <ClassTodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="new-todo">
             What needs to be done?
