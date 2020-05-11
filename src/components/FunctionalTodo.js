@@ -23,7 +23,7 @@ const FunctionalTodoApp = () => {
 
   return (
     <div>
-      <h3>TODO</h3>
+      <h3>Functional TODO</h3>
       <FunctionalTodoList items={items} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="new-todo">
