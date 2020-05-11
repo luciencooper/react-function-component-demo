@@ -3,8 +3,12 @@ import FunctionalTodoList from './FunctionalTodoList';
 
 const FunctionalTodoApp = () => {
 
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState(JSON.parse(localStorage.getItem('functionalTodoItems')) || []);
   const [text, setText] = React.useState('');
+
+  React.useEffect(() => {
+    localStorage.setItem('functionalTodoItems', JSON.stringify(items));
+  }, [items]);
 
   const handleChange = (e) => setText(e.target.value);
 

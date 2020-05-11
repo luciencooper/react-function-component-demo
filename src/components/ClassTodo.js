@@ -5,9 +5,35 @@ class ClassTodoApp extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { items: [], text: '' };
+    this.state = {
+      items: JSON.parse(localStorage.getItem('classTodoItems')) || [],
+      text: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('classTodoItems', JSON.stringify(this.state.items));
+  }
+
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.text.length === 0) {
+      return;
+    }
+    const newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      text: ''
+    }));
   }
 
   render() {
@@ -30,25 +56,6 @@ class ClassTodoApp extends React.Component {
         </form>
       </div>
     );
-  }
-
-  handleChange(e) {
-    this.setState({ text: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (this.state.text.length === 0) {
-      return;
-    }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      text: ''
-    }));
   }
 
 }
