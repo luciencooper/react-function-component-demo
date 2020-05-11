@@ -1,5 +1,5 @@
 import React from 'react';
-import FunctionalTodoList from './FunctionTodoList';
+import FunctionTodoList from './FunctionTodoList';
 
 const FunctionTodoApp = () => {
 
